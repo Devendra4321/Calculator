@@ -1,7 +1,7 @@
 let input = document.getElementById("input-text");
 // console.log(input);
 
-let btns = document.querySelectorAll("button");
+let btns = document.querySelectorAll(".btn");
 let string = "";
 
 for (btn of btns) {
@@ -22,3 +22,18 @@ for (btn of btns) {
     }
   });
 }
+
+//light mode
+let modeBtn = document.querySelector(".mode");
+modeBtn.addEventListener("click", function () {
+  modeBtn.classList.toggle("white-mode");
+  document.querySelector(".calculator").classList.toggle("main-container-mode");
+  document.querySelector("input").classList.toggle("input-mode");
+  for (btn of btns) {
+    btn.classList.toggle("btn-mode");
+  }
+  let operatorBtns = document.querySelectorAll(".operator");
+  for (operatorBtn of operatorBtns) {
+    operatorBtn.classList.toggle("operator-mode");
+  }
+});
